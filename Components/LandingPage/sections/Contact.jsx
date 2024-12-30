@@ -1,6 +1,8 @@
-const Contact = () => {
-    return <div className="bg-[url('public/images/village.svg')] bg-cover flex flex-row justify-between items-start gap-5 md:justify-around p-10">
-         <section className="items-center flex justify-items-center gap-4 mr-auto max-[470px]:flex-col max-[470px]:text-center">
+import { forwardRef } from "react";
+
+const Contact = forwardRef((props,ref) => {
+    return <div ref={ref} className="bg-[url('public/images/village.svg')] bg-cover flex flex-row justify-between items-start gap-5 md:justify-around p-10">
+         <section className="items-center flex justify-items-center gap-4 mr-auto max-[470px]:flex-col max-[400px]:text-center">
              <img className="w-20 " src="../public/Assets/logo.svg" alt="logo" />
              <h1 className="text-3xl font-Almendra text-customBrown]">Jama Wines</h1>
         </section>
@@ -27,6 +29,6 @@ const Contact = () => {
         </section>
         </div>
     </div>
-}
+})
 
 export default Contact;

@@ -1,4 +1,6 @@
-const History = () => {
+import { forwardRef } from "react";
+
+const History = forwardRef((props,ref) => {
    
  const array = [{count:1,title:"VINEYEARD",description:"Visit and take a tour"},    {count:2,title:"PRODUCT",description:"Old family recipes"},
    {count:3,title:"HISTORY",description:"Meet a tradition that lasts"}];
@@ -9,7 +11,7 @@ const History = () => {
     {title:"MANAVI",description:"It is made from the green variety grown in the Manavi",img:"../public/images/saferavi.jpg"},
  ];
 
-   return <div className="flex flex-col gap-20 bg-[#F5EBDA]">
+   return <div ref={ref} className="flex flex-col gap-20 bg-[#F5EBDA]">
         <section className="flex flex-col md:flex-row md:justify-around gap-10 m-auto md:w-full max-w-[850px]">
          {array.map((result,index)=>{
         return <div className="flex items-center gap-2">
@@ -28,7 +30,7 @@ const History = () => {
             <div className="flex flex-col items-center md:items-start gap-5 md:gap-7">
             <h1 className="text-6xl text-customBrown font-Almendra text-center md:text-left">OUR HISTORY</h1>
             <p className="text-center md:text-left text-[#9E845C] text-sm font-Baskerville max-w-[500px]">For nearly 100 years, Jama Wines has upheld the proud tradition of our ancestors, crafting exceptional wines with unwavering dedication to quality. From the very beginning, we have perfected the art of winemaking, preserving Kakheti's rich heritage in every bottle. Our wines have received high praise from many famous Georgian and European connoisseurs who have cherished and celebrated their exquisite taste.</p>
-            <button className="text-[#FAF7F2] bg-[#AF6900] rounded w-1/2 p-3 text-xl font-Baskerville">SEE MORE</button>
+            <button onClick={()=> props.scrollToSection("bestseller")} className="text-[#FAF7F2] bg-[#AF6900] rounded w-1/2 p-3 text-xl font-Baskerville z-20">SEE MORE</button>
             </div>
 
            <img className="rounded md:w-1/2 max-w-[400px]  md:max-w-[600px]" src="../public/images/history_section_image.jpg" alt="" />
@@ -47,7 +49,7 @@ const History = () => {
 
         </section>
     </div>
-}
+})
 
 
 export default History;

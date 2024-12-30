@@ -26,11 +26,11 @@ return <div className="flex flex-col items-center md:flex-row gap-16 relative ju
       <div className="border-2 border-black border-b-0">
       
     {array.map((result,index)=>{
-return <section onClick={()=> btnClick(index)} className="border-b-2 border-black flex flex-col cursor-pointer p-3 gap-3">
+return <section key={index} onClick={()=> btnClick(index)} className="border-b-2 border-black flex flex-col cursor-pointer p-3 gap-3">
 
 <div className="flex flex-row justify-between  gap-2">
 <h3 className="font-Baskerville text-customBrown text-xl ">{result.question}</h3>
-<button className="text-xl">{pressed.includes(index) ? <i class="fa-solid fa-circle-minus"></i> : <i class="fa-solid fa-circle-plus"></i>}</button>
+<button className="text-xl">{pressed.includes(index) ? <i className="fa-solid fa-circle-minus"></i> : <i className="fa-solid fa-circle-plus"></i>}</button>
 </div>
 
 {pressed.includes(index) && <p className="text-[#9E845C] font-Baskerville text-sm ">{result.answer}</p>}

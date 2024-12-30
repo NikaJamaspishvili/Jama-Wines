@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState,forwardRef } from "react"
 
-const BestSeller = ({setCartCount}) => {
+const BestSeller = forwardRef(({setCartCount}, ref) => {
 
  const [next,setNext] = useState(0);
  const [liked,setLiked] = useState([]);
@@ -26,23 +26,26 @@ const BestSeller = ({setCartCount}) => {
         }
     }
 
-    return <div>
+    return <div ref={ref}>
         <h1 className="font-Almendra text-6xl text-customBrown text-center">OUR BEST SPIRIT</h1>
         <p className="font-Baskerville text-sm text-center mt-5 text-[#9E845C]">Take A Look At Our Handmade Wine: </p>
     
         <section className="flex flex-col lg:flex-row items-center gap-24 lg:gap-10 mt-16">
      {array.map((result,index)=>{
         if(!next && index <= 2 || next && index > 2){ 
-        return <div className="bg-[#ebd9b9] relative w-2/3 rounded p-3 py-7 pl-16 gap-10 flex flex-col max-w-[430px] min-w-[270px]">
+        return <div key={index} className="bg-[#ebd9b9] relative w-2/3 rounded p-3 py-7 pl-16 gap-10 flex flex-col max-w-[430px] min-w-[270px]">
             <img src={result.img} className="absolute top-[-25px] left-0 w-14"/>
             <h1 className="font-Baskerville text-2xl text-customBrown">{result.title}</h1>
 
             <section className="flex justify-between items-center">
-                <p className="text-2xl font-Baskerville text-customBrown"><p className="text-sm font-Baskerville italic text-[#9E845C]">IN STOCK</p>{result.price}$</p>
+                <div className="flex flex-col gap-1">
+            <p className="text-sm font-Baskerville italic text-[#9E845C]">IN STOCK</p>
+            <p className="text-2xl font-Baskerville text-customBrown">{result.price}$</p>
+              </div>
                 <div className="flex border-2 border-[#9E845C]">
-                    <button className={!liked.includes(index) ? "border-r-2 border-[#9E845C] p-2":"border-r-2 border-[#9E845C] p-2 text-white bg-red-500"} onClick={()=>{liked.includes(index) ? setLiked(liked.filter(item => item !== index)) : setLiked([...liked,index])}}><i class="fa-regular fa-heart"></i></button>
+                    <button className={!liked.includes(index) ? "border-r-2 border-[#9E845C] p-2":"border-r-2 border-[#9E845C] p-2 text-white bg-red-500"} onClick={()=>{liked.includes(index) ? setLiked(liked.filter(item => item !== index)) : setLiked([...liked,index])}}><i className="fa-regular fa-heart"></i></button>
 
-                    <button className={!cart.includes(index) ? "p-2" : "p-2 bg-green-400 text-white"} onClick={()=> cartLogic(index)}><i class="fa-solid fa-cart-shopping"></i>
+                    <button className={!cart.includes(index) ? "p-2" : "p-2 bg-green-400 text-white"} onClick={()=> cartLogic(index)}><i className="fa-solid fa-cart-shopping"></i>
                     </button>
 
                 </div>
@@ -54,16 +57,16 @@ const BestSeller = ({setCartCount}) => {
 </section>
 
         <section className="flex gap-6 mt-20 items-center justify-center">
-          <button className="text-5xl" onClick={() => setNext(!next)}><i class="fa-solid fa-circle-arrow-left"></i></button>
+          <button className="text-5xl" onClick={() => setNext(!next)}><i className="fa-solid fa-circle-arrow-left"></i></button>
 
           <div className="flex gap-2 text-base">
-          <p className={!next && "text-gray-300 scale-125"}><i class="fa-solid fa-circle"></i></p>
-          <p className={next && "text-gray-300 scale-125"}><i class="fa-solid fa-circle"></i></p>
+          <p className={!next && "text-gray-300 scale-125"}><i className="fa-solid fa-circle"></i></p>
+          <p className={next && "text-gray-300 scale-125"}><i className="fa-solid fa-circle"></i></p>
           </div>
 
-          <button className="text-5xl" onClick={() => setNext(!next)}><i class="fa-solid fa-circle-arrow-right"></i></button>
+          <button className="text-5xl" onClick={() => setNext(!next)}><i className="fa-solid fa-circle-arrow-right"></i></button>
         </section>
     </div>
-}
+})
 
 export default BestSeller;
