@@ -1,0 +1,17 @@
+.navbarDiv p{
+    position:relative;
+}
+
+.navbarDiv p::before{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  background-color: #482817;
+  bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.navbarDiv p:hover::before{
+  width: 100%;
+}
