@@ -12,50 +12,40 @@
 
 @keyframes animation {
    0% {
-     position: relative;
-     right:0px;
+     transform: translateX(0); /* Start position */
    }
-
-   50%{
-      position: relative;
-      right: 1500px;
+ 
+   50% {
+     transform: translateX(-1500px); /* Move to the right */
    }
-
-   51%{
-      position: relative;
-      right: -1500px;
+ 
+   51% {
+     transform: translateX(3000px); /* Immediately move to the left without animating */
    }
-
-   100%{
-      position: relative;
-      right: 0px;
+ 
+   100% {
+     transform: translateX(0); /* Return to the original position */
    }
-
  }
  
-
-@keyframes animation2{
+ @keyframes animation2 {
    0% {
-      position: relative;
-      left:0px;
-    }
+     transform: translateX(0); /* Start position */
+   }
  
-    50%{
-       position: relative;
-       left: 1500px;
-    }
+   50% {
+     transform: translateX(1500px); /* Move to the right */
+   }
  
-    51%{
-       position: relative;
-       left: -1500px;
-    }
+   51% {
+     transform: translateX(-3000px); /* Immediately move to the left without animating */
+   }
  
-    100%{
-       position: relative;
-       left: 0px;
-    }
-}
-
+   100% {
+     transform: translateX(0); /* Return to the original position */
+   }
+ }
+ 
 @keyframes animation3{
     0%{
       opacity: 0.5;
