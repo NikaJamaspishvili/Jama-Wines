@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+//I used css stylesheet in order to animate the website
+import "./animation.css";
+
 const QandA = () => {
 
  const [pressed,setPressed] = useState([]);
@@ -33,7 +36,7 @@ return <section key={index} onClick={()=> btnClick(index)} className="border-b-2
 <button className="text-xl">{pressed.includes(index) ? <i className="fa-solid fa-circle-minus"></i> : <i className="fa-solid fa-circle-plus"></i>}</button>
 </div>
 
-{pressed.includes(index) && <p className="text-[#9E845C] font-Baskerville text-sm ">{result.answer}</p>}
+{pressed.includes(index) && <p className="text-[#9E845C] font-Baskerville text-sm pAnimate">{result.answer}</p>}
 </section>
 
 })} 
