@@ -5,7 +5,7 @@ import Contact from "./sections/Contact.jsx";
 import History from "./sections/History.jsx";
 import QandA from "./sections/Q&A.jsx";
 import WineSellar from "./sections/WineSellar.jsx";
-import NewsLetter from "./sections/Newsletter.jsx";
+import NewsLetter from "./sections/NewsLetter.jsx";
 
 import { lazy,Suspense } from "react";
 

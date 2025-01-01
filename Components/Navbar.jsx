@@ -54,9 +54,8 @@ const Navbar = ({cartCount,scrollToSection,setShowCart}) => {
        onClick={() => setClicked(!clicked)}><i className="fa-solid fa-bars"></i></button>
             {clicked || window.innerWidth > 768 ? <div className="font-Almendra fixed top-0 left-0 w-full h-full flex flex-col gap-14 justify-center items-center text-6xl text-[#623D2A] bg-white md:relative md:p-0 md:bg-transparent md:text-xl md:top-0 md:flex-row md:gap-6 navbarDiv z-10">
            <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('home')}>Home</motion.p>
-           <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>navigate('/shop')}>Shop</motion.p>
            <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('history')}>History</motion.p>
-           <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('bestseller')}>Bestseller</motion.p>
+           <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('bestseller')}>Shop</motion.p>
            <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('contact')}>Contact</motion.p>
             </div>:null}
    <motion.div variants={childVariants} className="w-10 cursor-pointer relative z-20" onClick={()=> setShowCart(true)}>
