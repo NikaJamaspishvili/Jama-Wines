@@ -3,11 +3,10 @@ import { useState,forwardRef } from "react"
 //I used css stylesheet in order to animate the website
 import "./animation.css";
 
-const BestSeller = forwardRef(({setCartCount}, ref) => {
+const BestSeller = forwardRef(({setCartCount,cart,setCart}, ref) => {
 
  const [next,setNext] = useState(0);
  const [liked,setLiked] = useState([]);
- const [cart,setCart] = useState([]);
 
     const array = [
         {title:"Teliani",price:99.00,img:"../public/assets/wine.png",liked:false},
@@ -19,12 +18,13 @@ const BestSeller = forwardRef(({setCartCount}, ref) => {
 
     ]
 
-    function cartLogic(index){
+    function cartLogic(index,result){
+
         if(!cart.includes(index)){
             setCart([...cart,index])
             setCartCount(prev => prev + 1);
         }else{
-            setCart(cart.filter(item => item !== index))
+            setCart(cart.filter(item => item !== index));
             setCartCount(prev => prev - 1);
         }
     }
@@ -52,7 +52,7 @@ const BestSeller = forwardRef(({setCartCount}, ref) => {
                 <div className="flex border-2 border-[#9E845C]">
                     <button className={!liked.includes(index) ? "border-r-2 border-[#9E845C] p-2":"border-r-2 border-[#9E845C] p-2 text-white bg-red-500"} onClick={()=>{liked.includes(index) ? setLiked(liked.filter(item => item !== index)) : setLiked([...liked,index])}}><i className="fa-regular fa-heart"></i></button>
 
-                    <button className={!cart.includes(index) ? "p-2" : "p-2 bg-green-400 text-white"} onClick={()=> cartLogic(index)}><i className="fa-solid fa-cart-shopping"></i>
+                    <button className={!cart.includes(index) ? "p-2" : "p-2 bg-green-400 text-white"} onClick={()=> cartLogic(index,{title:result.title,price:result.price,img:result.img})}><i className="fa-solid fa-cart-shopping"></i>
                     </button>
 
                 </div>

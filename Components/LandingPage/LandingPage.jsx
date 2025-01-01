@@ -7,11 +7,17 @@ import QandA from "./sections/Q&A.jsx";
 import WineSellar from "./sections/WineSellar.jsx";
 import NewsLetter from "./sections/Newsletter.jsx";
 
+import { lazy,Suspense } from "react";
+
+const Cart = lazy(()=>import("../CartComponent/Cart.jsx"));
+
 import { useState,useRef } from "react";
 
 function Home(){
 
  const [cartCount,setCartCount] = useState(0);
+ const [showCart,setShowCart] = useState(false);
+ const [cart,setCart] = useState([]);
 
  let homeRef = useRef();
  let historyRef = useRef();
@@ -44,10 +50,15 @@ function Home(){
  }
 
   return <div className=" flex flex-col gap-24">
-    <Navbar cartCount={cartCount} scrollToSection={scrollToSection}/>
+<Suspense fallback={<div>loading...</div>}>
+{showCart && <Cart setCartCount={setCartCount} cart={cart} setCart={setCart} setShowCart={setShowCart}/>
+}
+</Suspense>
+
+    <Navbar cartCount={cartCount} scrollToSection={scrollToSection} setShowCart={setShowCart}/>
     <Hero ref={homeRef} scrollToSection={scrollToSection}/>
     <History ref={historyRef} scrollToSection={scrollToSection}/>
-    <BestSeller setCartCount={setCartCount} ref={bestsellerRef}/>   
+    <BestSeller setCartCount={setCartCount} cart={cart} setCart={setCart} ref={bestsellerRef}/>   
     <QandA />
     <WineSellar />
     <NewsLetter />

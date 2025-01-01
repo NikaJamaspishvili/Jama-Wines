@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-const Navbar = ({cartCount,scrollToSection}) => {
+const Navbar = ({cartCount,scrollToSection,setShowCart}) => {
 
  const [clicked, setClicked] = useState(false);
 
@@ -59,7 +59,7 @@ const Navbar = ({cartCount,scrollToSection}) => {
            <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('bestseller')}>Bestseller</motion.p>
            <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('contact')}>Contact</motion.p>
             </div>:null}
-   <motion.div variants={childVariants} className="w-10 cursor-pointer relative z-20" onClick={()=>navigate('/cart')}>
+   <motion.div variants={childVariants} className="w-10 cursor-pointer relative z-20" onClick={()=> setShowCart(true)}>
    <img className="w-8 cursor-pointer" src="../public/Assets/cart icon.svg" alt="cart icon" />
    <span className="absolute md:right-[-5px] right-0 top-[-5px] bg-[#623D2A] text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">{cartCount}</span>
    </motion.div>
