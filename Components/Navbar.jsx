@@ -2,15 +2,11 @@ import "./LandingPage/style.css";
 
 import { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
-
 import { motion } from "framer-motion";
 
 const Navbar = ({cartCount,scrollToSection,setShowCart}) => {
 
  const [clicked, setClicked] = useState(false);
-
- const navigate = useNavigate();
 
  function btnClick(title){
 
@@ -59,7 +55,7 @@ const Navbar = ({cartCount,scrollToSection,setShowCart}) => {
            <motion.p variants={childVariants} className="cursor-pointer" onClick={()=>btnClick('contact')}>Contact</motion.p>
             </div>:null}
    <motion.div variants={childVariants} className="w-10 cursor-pointer relative z-20" onClick={()=> setShowCart(true)}>
-   <img className="w-8 cursor-pointer" src="../public/Assets/cart icon.svg" alt="cart icon" />
+   <img className="w-8 cursor-pointer" src="../assets/cart icon.svg" alt="cart icon" />
    <span className="absolute md:right-[-5px] right-0 top-[-5px] bg-[#623D2A] text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">{cartCount}</span>
    </motion.div>
 
