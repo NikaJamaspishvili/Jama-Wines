@@ -2,7 +2,8 @@ import { Canvas,useFrame} from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera,Environment } from "@react-three/drei";
 
 import Barrel from "../../../public/3d_model/wine_barrel/Barrel.jsx";
-import { Component, Suspense, useRef } from "react";
+
+import { Suspense, useRef } from "react";
 
 function RotatingModel({Component}){
     const ref=useRef();

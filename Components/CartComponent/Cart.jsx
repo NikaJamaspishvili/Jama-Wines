@@ -31,12 +31,12 @@ useEffect(()=>{
 },[checkedOut])
 
     const array = [
-        {title:"Teliani",price:99.00,img:"../public/assets/wine.png",},
-        {title:"MUKUZANI",price:89.00,img:"../public/assets/wine(1).png",},
-        {title:"MANAVI",price:55.00,img:"../public/assets/wine(2).png",},
-        {title:"Gurjaani",price:45.00,img:"../public/assets/wine(2).png",},
-        {title:"Gremi",price:125.00,img:"../public/assets/wine.png",},
-        {title:"Eniseli",price:230.00,img:"../public/assets/wine(1).png",},
+        {title:"Teliani",price:99.00,img:"../assets/wine.png",},
+        {title:"MUKUZANI",price:89.00,img:"../assets/wine(1).png",},
+        {title:"MANAVI",price:55.00,img:"../assets/wine(2).png",},
+        {title:"Gurjaani",price:45.00,img:"../assets/wine(2).png",},
+        {title:"Gremi",price:125.00,img:"../assets/wine.png",},
+        {title:"Eniseli",price:230.00,img:"../assets/wine(1).png",},
     ]
 
   function smallCheckout(id){

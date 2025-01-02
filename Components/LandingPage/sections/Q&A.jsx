@@ -44,7 +44,7 @@ return <section key={index} onClick={()=> btnClick(index)} className="border-b-2
       
      </section>
 
- <img className="md:w-1/2 w-2/3" src="../public/assets/Frame.png" alt="" />
+ <img className="md:w-1/2 w-2/3" src="../assets/Frame.png" alt="" />
 
     </div>
 

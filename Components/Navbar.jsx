@@ -41,7 +41,7 @@ const Navbar = ({cartCount,scrollToSection,setShowCart}) => {
 
     return <motion.div initial="hidden" animate="visible" variants={parentVariants} className="bg-primary flex justify-end md:justify-between gap-10 fixed w-[95%] md:w-[90%] max-w-[1300px] mx-auto z-20 md:py-1 py-4">
          <motion.section variants={logoVariants} className="hidden md:visible items-center justify-items- md:flex gap-4">
-             <img className="w-20 " src="../public/Assets/logo.svg" alt="logo" />
+             <img className="w-20 " src="../assets/logo.svg" alt="logo" />
              <h1 className="text-3xl font-Almendra text-customBrown]">Jama Wines</h1>
          </motion.section>
          
