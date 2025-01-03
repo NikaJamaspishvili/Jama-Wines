@@ -30,7 +30,7 @@ return <div ref={ref} className="flex flex-col md:flex-row gap-10 justify-betwee
      </div>
      <div className="flex flex-col gap-8 items-center md:items-start">
      <motion.p variants={childVariants} className="text-base text-center md:text-left italic text-customBrown font-Baskerville">Jama Wines brings you the timeless tradition of Kakheti winemaking, passed down through generations. Taste the heritage of our ancestors in every bottle.</motion.p>
-     <motion.button variants={childVariants}  whileHover={{marginLeft:"20px",scale:1.02}} className="border-y-2 p-3 border-[rgb(175,105,0)] font-Baskerville w-1/2 hover:scale-110" onClick={()=> props.scrollToSection("history")}>SEE HOW IT IS MADE</motion.button>
+     <motion.button variants={childVariants}  whileHover={{marginLeft:"20px",scale:1.02}} className="border-y-2 p-3 border-[rgb(175,105,0)] font-Baskerville w-1/2" onClick={()=> props.scrollToSection("history")}>SEE HOW IT IS MADE</motion.button>
      </div>
     </motion.section>
     <img className="md:w-[45%] md:min-w-[350px]" src="../assets/bottle_hero.svg" alt="wine bottle artwork" />
