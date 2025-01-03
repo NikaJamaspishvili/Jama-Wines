@@ -8,10 +8,9 @@ import WineSellar from "./sections/WineSellar.jsx";
 import NewsLetter from "./sections/NewsLetter.jsx";
 
 import { lazy,Suspense } from "react";
+import { useState,useRef } from "react";
 
 const Cart = lazy(()=>import("../CartComponent/Cart.jsx"));
-
-import { useState,useRef } from "react";
 
 function Home(){
 
