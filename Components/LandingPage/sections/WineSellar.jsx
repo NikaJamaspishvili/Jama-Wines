@@ -1,9 +1,8 @@
 import { Canvas,useFrame} from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera,Environment } from "@react-three/drei";
+import {lazy,Suspense,useRef} from "react";
 
-import Barrel from "../../../public/3d_model/wine_barrel/Barrel.jsx";
-
-import { Suspense, useRef } from "react";
+const Barrel = lazy(()=>import("../../../public/3d_model/wine_barrel/Barrel.jsx"));
 
 function RotatingModel({Component}){
     const ref=useRef();
