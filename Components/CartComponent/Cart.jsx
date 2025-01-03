@@ -71,7 +71,7 @@ useEffect(()=>{
 
       <section className="flex flex-col items-center gap-5 mt-10">
         <h1 className="font-Almendra text-3xl">Total: <span className="font-serif text-red-500">{value}$</span></h1>
-        <button className={`${checkedOut && "btnAnimation"} font-Baskerville text-xl bg-green-600 rounded-xl text-white p-3`} onClick={()=>setCheckedOut(true)}>{checkedOut ? <i class="fa-solid fa-check"></i> : "CHECKOUT"}</button>
+        <button className={`${checkedOut && "btnAnimation"} font-Baskerville text-xl bg-green-600 text-white p-3`} onClick={()=>setCheckedOut(true)}>{checkedOut ? <i class="fa-solid fa-check"></i> : "CHECKOUT"}</button>
       </section></>: <section className="flex flex-col w-full h-full items-center justify-center text-red-500 gap-5">
          <h1 className="text-3xl font-sans">Cart is Empty</h1>
          <i class="fa-solid fa-cart-arrow-down text-6xl"></i>
